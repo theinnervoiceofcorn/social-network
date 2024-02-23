@@ -1,3 +1,4 @@
+import { SCMainPage } from "./MainPage.styled";
 import { AppHeader } from "../../components/AppHeader/Header";
 import { AppNavbar } from "../../components/AppNavbar/AppNavbar";
 import { Sublist } from "../../components/Sublist/Sublist";
@@ -7,11 +8,10 @@ import { AppPost } from "../../components/AppPost/AppPost";
 import { AppRepost } from "../../components/AppRepost/AppRepost";
 import { Friendlist } from "../../components/Friendlist/Friendlist";
 import { MusicBlock } from "../../components/MusicBlock/MusicBlock";
-import "./MainPage.scss";
 
 export const MainPage = () => {
   return (
-    <div className="MainPage">
+    <SCMainPage>
       <AppHeader />
       <aside className="LeftSide">
         <AppNavbar />
@@ -27,6 +27,6 @@ export const MainPage = () => {
         <Friendlist />
         <MusicBlock />
       </aside>
-    </div>
+    </SCMainPage>
   );
 };

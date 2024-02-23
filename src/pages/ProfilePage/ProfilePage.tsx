@@ -1,4 +1,4 @@
-import "./ProfilePage.scss";
+import { SCProfilePage } from "./ProfilePage.styled";
 import { AppHeader } from "../../components/AppHeader/Header";
 import { AppNavbar } from "../../components/AppNavbar/AppNavbar";
 import { Sublist } from "../../components/Sublist/Sublist";
@@ -15,7 +15,7 @@ import { MusicBlock } from "../../components/MusicBlock/MusicBlock";
 
 export const ProfilePage = () => {
   return (
-    <div className="ProfilePage">
+    <SCProfilePage>
       <AppHeader />
       <aside className="LeftSide">
         <AppNavbar />
@@ -37,6 +37,6 @@ export const ProfilePage = () => {
         <FriendsBlock />
         <MusicBlock />
       </aside>
-    </div>
+    </SCProfilePage>
   );
 };

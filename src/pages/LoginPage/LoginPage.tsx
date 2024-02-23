@@ -1,4 +1,4 @@
-import "./LoginPage.scss";
+import { SCLoginPage } from "./LoginPage.styled";
 import { AppHeading } from "../../components/UI/AppHeading/AppHeading";
 import { AppInput } from "../../components/UI/AppInput/AppInput";
 import { AppButton } from "../../components/UI/AppButton/AppButton";
@@ -6,7 +6,7 @@ import { OpeningInfo } from "../../components/OpeningInfo/OpeningInfo";
 
 export const LoginPage = () => {
   return (
-    <div className="LoginPage">
+    <SCLoginPage>
       <AppHeading headingLevel="h1" headingText="Авторизация" />
       <form action="#">
         <AppInput inputPlaceholder="Номер телефона" inputType="tel" />
@@ -14,6 +14,6 @@ export const LoginPage = () => {
         <AppButton userIsRegistered={true} />
       </form>
       <OpeningInfo userIsRegistered={true} />
-    </div>
+    </SCLoginPage>
   );
 };
