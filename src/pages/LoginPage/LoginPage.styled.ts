@@ -14,7 +14,7 @@ export const SCLoginPage = styled.div`
     margin-bottom: 50px;
   }
 
-  input {
+  /* input {
     display: block;
     width: 100%;
     margin-bottom: 20px;
@@ -28,7 +28,7 @@ export const SCLoginPage = styled.div`
     &:is(:hover, :focus) {
       border-color: ${(props) => props.theme.colors.primeColor};
     }
-  }
+  } */
 
   button {
     width: 100%;

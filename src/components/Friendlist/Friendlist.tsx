@@ -1,8 +1,10 @@
+import { AppHeading } from "../UI/AppHeading/AppHeading";
+
 export const Friendlist = () => {
   return (
     <div className="List">
       <div className="List__title">
-        <h2>Близкие друзья</h2>
+        <AppHeading headingLevel="h2" headingText="Близкие друзья" />
         <span className="count">123</span>
       </div>
       <div className="UserElem">

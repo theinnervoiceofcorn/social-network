@@ -1,8 +1,10 @@
+import { AppHeading } from "../UI/AppHeading/AppHeading";
+
 export const Sublist = () => {
   return (
     <div className="List">
       <div className="List__title">
-        <h2>Подписки</h2>
+        <AppHeading headingLevel="h2" headingText="Подписки" />
         <span className="count">123</span>
       </div>
       <div className="UserElem">

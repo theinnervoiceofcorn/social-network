@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import "./Header.scss";
+import { SCHeader } from "./Header.styled";
 
 export const AppHeader = () => {
   return (
-    <header className="Header">
+    <SCHeader>
       <div className="Header__logo">
         <Link to="/main">
           <svg
@@ -96,6 +96,6 @@ export const AppHeader = () => {
           />
         </svg>
       </div>
-    </header>
+    </SCHeader>
   );
 };

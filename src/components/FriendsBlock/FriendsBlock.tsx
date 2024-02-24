@@ -1,8 +1,10 @@
+import { AppHeading } from "../UI/AppHeading/AppHeading";
+
 export const FriendsBlock = () => {
   return (
     <div className="FriendsBlock">
       <div className="Friends__title">
-        <h2>Друзья</h2>
+        <AppHeading headingLevel="h2" headingText="Друзья" />
         <span className="count">130</span>
       </div>
       <div className="Friends__wrapper">

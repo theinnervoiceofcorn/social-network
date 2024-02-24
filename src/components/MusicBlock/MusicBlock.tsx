@@ -1,8 +1,10 @@
+import { AppHeading } from "../UI/AppHeading/AppHeading";
+
 export const MusicBlock = () => {
   return (
     <div className="MusicBlock">
       <div className="MusicBlock__title">
-        <h2>Вы недавно слушали</h2>
+        <AppHeading headingLevel="h2" headingText="Вы недавно слушали" />
         <span>123</span>
       </div>
       <div className="MusicElem">
