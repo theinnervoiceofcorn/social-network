@@ -1,0 +1,58 @@
+export const userElemData = [
+    {
+        imgSource: "./img/profile/profile-img-1.jpeg",
+        altText: "User",
+        mainText: "N E W",
+        secondaryText: "Развитие",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-2.jpeg",
+        altText: "User",
+        mainText: "Aesthetics",
+        secondaryText: "Стиль",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-3.jpeg",
+        altText: "User",
+        mainText: "дом твоей эстетики",
+        secondaryText: "Творчество",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-4.jpeg",
+        altText: "User",
+        mainText: "wailet",
+        secondaryText: "Искусство",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-5.jpeg",
+        altText: "User",
+        mainText: "A W E S O M E",
+        secondaryText: "Стиль",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-6.jpeg",
+        altText: "User",
+        mainText: "minimalism",
+        secondaryText: "Фотография",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-7.jpeg",
+        altText: "User",
+        mainText: "Словарный запас",
+        secondaryText: "Литература",
+        badge: 3,
+    },
+    {
+        imgSource: "./img/profile/profile-img-8.jpeg",
+        altText: "User",
+        mainText: "Look",
+        secondaryText: "Мода",
+        badge: 3,
+    },
+];

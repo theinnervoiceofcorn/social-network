@@ -1,13 +1,28 @@
 import { AppHeading } from "../UI/AppHeading/AppHeading";
+import { UserElem } from "../UI/UserElem/UserElem";
+import { SCList } from "./List.styled";
+import { userElemData } from "./data";
 
 export const Sublist = () => {
   return (
-    <div className="List">
+    <SCList>
       <div className="List__title">
         <AppHeading headingLevel="h2" headingText="Подписки" />
-        <span className="count">123</span>
+        <span className="count">{userElemData.length}</span>
       </div>
-      <div className="UserElem">
+      {userElemData &&
+        userElemData.map((elem) => (
+          <UserElem
+            imgSource={elem.imgSource}
+            altText={elem.altText}
+            mainText={elem.mainText}
+            secondaryText={elem.secondaryText}
+            badge={elem.badge}
+          />
+        ))}
+    </SCList>
+  );
+        {/* <div className="UserElem">
         <img src="./img/profile/profile-img-1.jpeg" alt="User" />
         <div className="user__description">
           <p className="main__text">N E W</p>
@@ -70,7 +85,5 @@ export const Sublist = () => {
           <p className="secondary__text">Мода</p>
         </div>
         <span className="Badge">3</span>
-      </div>
-    </div>
-  );
+      </div> */}
 };

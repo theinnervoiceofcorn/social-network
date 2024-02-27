@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AppLoginIcon } from "../UI/AppLoginIcon/AppLoginIcon";
+import { SCOpeningInfo } from "./OpeningInfo.styled";
 
 interface IOpeningInfo {
   userIsRegistered: boolean;
@@ -7,7 +8,7 @@ interface IOpeningInfo {
 
 export const OpeningInfo = ({ userIsRegistered }: IOpeningInfo) => {
   return (
-    <>
+    <SCOpeningInfo>
       {userIsRegistered && <Link to="#">Забыли пароль?</Link>}
       <div className="registration">
         <span>
@@ -44,6 +45,6 @@ export const OpeningInfo = ({ userIsRegistered }: IOpeningInfo) => {
           />
         </div>
       </div>
-    </>
+    </SCOpeningInfo>
   );
 };

@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { SCAppNavbar } from "./AppNavbar.styled";
 
 export const AppNavbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="Navbar">
+    <SCAppNavbar>
       <ul className="navbar__list">
         <li className="navbar__item" onClick={() => navigate("/profile")}>
           <svg
@@ -161,6 +162,6 @@ export const AppNavbar = () => {
           <span className="Badge">100</span>
         </li>
       </ul>
-    </nav>
+    </SCAppNavbar>
   );
 };
