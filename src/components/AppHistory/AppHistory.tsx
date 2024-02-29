@@ -1,6 +1,10 @@
+import { HistoryItem } from "../UI/HistoryItem/HistoryItem";
+import { SCAppHistory } from "./AppHistory.styled";
+import { HistoryItemData } from "./data";
+
 export const AppHistory = () => {
   return (
-    <div className="History">
+    <SCAppHistory>
       <svg
         className="icon icon-slider-button"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +24,7 @@ export const AppHistory = () => {
         </g>
       </svg>
       <div className="History__wrapper">
-        <div className="History__item add-history">
+        {/* <div className="History__item add-history">
           <div className="icon-wrapper">
             <svg
               className="icon icon-plus"
@@ -34,74 +38,17 @@ export const AppHistory = () => {
             <span>История</span>
           </div>
           <img src="./img/users/andrey-kashirskiy.jpeg" alt="Add History" />
-        </div>
-        <div className="History__item">
-          <img src="./img/history/poster-1.jpeg" alt="History Poster" />
-          <div className="History__owner">
-            <img
-              className="owner__img"
-              src="./img/users/aleksandr-maykov.jpeg"
-              alt="History Owner"
+        </div> */}
+        {HistoryItemData &&
+          HistoryItemData.map((e) => (
+            <HistoryItem
+              posterImgSrc={e.posterImgSrc}
+              userImgSrc={e.userImgSrc}
+              userTxt={e.userTxt}
+              isAddHistory={e.isAddHistory}
             />
-            <span className="owner__name">Александр Майков</span>
-          </div>
-        </div>
-        <div className="History__item">
-          <img src="./img/history/poster-2.jpeg" alt="History Poster" />
-          <div className="History__owner">
-            <img
-              className="owner__img"
-              src="./img/users/darya-gertner.jpeg"
-              alt="History Owner"
-            />
-            <span className="owner__name">Дарья Гертнер</span>
-          </div>
-        </div>
-        <div className="History__item">
-          <img src="./img/history/poster-3.jpeg" alt="History Poster" />
-          <div className="History__owner">
-            <img
-              className="owner__img"
-              src="./img/users/denis-frolov.jpeg"
-              alt="History Owner"
-            />
-            <span className="owner__name">Денис Фролов</span>
-          </div>
-        </div>
-        <div className="History__item">
-          <img src="./img/history/poster-4.jpeg" alt="History Poster" />
-          <div className="History__owner">
-            <img
-              className="owner__img"
-              src="./img/users/katarina-fisher.jpeg"
-              alt="History Owner"
-            />
-            <span className="owner__name">Катарина Фишер</span>
-          </div>
-        </div>
-        <div className="History__item">
-          <img src="./img/history/poster-1.jpeg" alt="History Poster" />
-          <div className="History__owner">
-            <img
-              className="owner__img"
-              src="./img/users/aleksandr-maykov.jpeg"
-              alt="History Owner"
-            />
-            <span className="owner__name">Александр Майков</span>
-          </div>
-        </div>
-        <div className="History__item">
-          <img src="./img/history/poster-2.jpeg" alt="History Poster" />
-          <div className="History__owner">
-            <img
-              className="owner__img"
-              src="./img/users/darya-gertner.jpeg"
-              alt="History Owner"
-            />
-            <span className="owner__name">Дарья Гертнер</span>
-          </div>
-        </div>
+          ))}
       </div>
-    </div>
+    </SCAppHistory>
   );
 };

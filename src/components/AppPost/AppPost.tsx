@@ -1,6 +1,22 @@
+import { useState } from "react";
+import { MediaItem } from "../UI/MediaItem/MediaItem";
+import { SCAppPost } from "./AppPost.styled";
+import { MediaItemData } from "./mediaData";
+import { CommentsBlock } from "../UI/CommentsBlock/CommentsBlock";
+import { SCMediaContainer } from "../MediaContainer/MediaContainer.styled";
+import { commentData } from "./commentData";
+
 export const AppPost = () => {
+  const [liked, setLiked] = useState(false);
+  const [marked, setMarked] = useState(false);
+
+  const handleLikeClick = () => setLiked(!liked);
+  const handleMarkClick = () => setMarked(!marked);
+
   return (
-    <div className="Post _liked _marked">
+    <SCAppPost
+      className={`Post ${liked ? "_liked" : ""} ${marked ? "_marked" : ""}`}
+    >
       <div className="UserElem">
         <img src="./img/users/aleksandr-maykov.jpeg" alt="User" />
         <div className="user__description">
@@ -11,40 +27,12 @@ export const AppPost = () => {
         </div>
       </div>
       <p className="Post__text">Момент умиротворения и спокойствия</p>
-      <div className="media-container">
-        <img
-          className="media__item"
-          src="./img/post/nature-1.png"
-          alt="Post Item"
-        />
-        <img
-          className="media__item"
-          src="./img/post/nature-2.png"
-          alt="Post Item"
-        />
-        <img
-          className="media__item"
-          src="./img/post/nature-3.png"
-          alt="Post Item"
-        />
-        <img
-          className="media__item"
-          src="./img/post/nature-4.png"
-          alt="Post Item"
-        />
-        <img
-          className="media__item"
-          src="./img/post/nature-5.png"
-          alt="Post Item"
-        />
-        <img
-          className="media__item"
-          src="./img/post/nature-6.png"
-          alt="Post Item"
-        />
-      </div>
+      <SCMediaContainer>
+        {MediaItemData &&
+          MediaItemData.map((e) => <MediaItem imgSrc={e.imgSrc} />)}
+      </SCMediaContainer>
       <div className="PostControls">
-        <div className="icon-wrapper like">
+        <div className="icon-wrapper like" onClick={handleLikeClick}>
           <span className="count likes-count">1488</span>
           <svg
             className="icon icon-like"
@@ -84,7 +72,7 @@ export const AppPost = () => {
             />
           </svg>
         </div>
-        <div className="icon-wrapper mark">
+        <div className="icon-wrapper mark" onClick={handleMarkClick}>
           <svg
             className="icon icon-mark"
             viewBox="0 0 21 25"
@@ -97,29 +85,14 @@ export const AppPost = () => {
           </svg>
         </div>
       </div>
-      <div className="CommentBlock">
-        <img src="./img/users/aleksandr-maykov.jpeg" alt="User" />
-        <div className="comment__description">
-          <a href="#" className="comment__owner">
-            Карина Савина
-          </a>
-          <p className="comment__text">Это текст комментария...</p>
-          <a href="#" className="reply">
-            Ответить
-          </a>
-        </div>
-        <span className="date">25 марта</span>
-        <svg
-          className="icon icon-like"
-          viewBox="0 0 23 23"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            id="icon"
-            d="M11.5 23L9.8325 21.3455C3.91 15.4921 0 11.6191 0 6.89373C0 3.02071 2.783 0 6.325 0C8.326 0 10.2465 1.01526 11.5 2.60708C12.7535 1.01526 14.674 0 16.675 0C20.217 0 23 3.02071 23 6.89373C23 11.6191 19.09 15.4921 13.1675 21.3455L11.5 23Z"
+      {commentData &&
+        commentData.map((e) => (
+          <CommentsBlock
+            commentTxt={e.commentTxt}
+            userImgSrc={e.userImgSrc}
+            userNameTxt={e.userNameTxt}
           />
-        </svg>
-      </div>
+        ))}
       <svg
         className="icon icon-more"
         viewBox="0 0 25 5"
@@ -131,6 +104,6 @@ export const AppPost = () => {
           <circle id="ellipse_3" cx="2.5" cy="2.5" r="2.5" />
         </g>
       </svg>
-    </div>
+    </SCAppPost>
   );
 };

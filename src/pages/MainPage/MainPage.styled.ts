@@ -222,7 +222,7 @@ export const SCMainPage = styled.div`
     }
   } */
 
-  .WhatsNew {
+  /* .WhatsNew {
     box-shadow: 0 0 10px var(--light-gray);
     background-color: var(--elems-bgc);
     border-radius: 20px;
@@ -282,9 +282,9 @@ export const SCMainPage = styled.div`
     .WhatsNew {
       padding: 10px 15px;
     }
-  }
+  } */
 
-  .History {
+  /* .History {
     position: relative;
     overflow: visible;
     margin-bottom: 20px;
@@ -318,9 +318,9 @@ export const SCMainPage = styled.div`
         filter: none;
       }
     }
-  }
+  } */
 
-  .History__item {
+  /* .History__item {
     flex: 0 0 145px;
     cursor: pointer;
     height: calc(6.3vw + 110px); //? 200 - 1440 | 230 - 1920
@@ -446,9 +446,9 @@ export const SCMainPage = styled.div`
         background-color: transparent;
       }
     }
-  }
+  } */
 
-  .Post {
+  /* .Post {
     box-shadow: 0 0 10px var(--light-gray);
     padding: calc(1vw + 11px);
     background-color: var(--elems-bgc);
@@ -506,7 +506,7 @@ export const SCMainPage = styled.div`
     &__text {
       margin-bottom: 20px;
     }
-  }
+  } 
 
   .icon-more {
     cursor: pointer;
@@ -530,9 +530,9 @@ export const SCMainPage = styled.div`
       background-color: var(--prime-color);
       fill: white;
     }
-  }
+  } */
 
-  .media-container {
+  /* .media-container {
     display: grid;
     gap: 5px;
 
@@ -558,7 +558,7 @@ export const SCMainPage = styled.div`
       grid-template-rows: minmax(100px, 200px);
       grid-auto-rows: minmax(100px, 200px);
     }
-  }
+  } */
 
   .Repost__wrapper {
     border-left: 1px solid var(--gray);
@@ -728,7 +728,7 @@ export const SCMainPage = styled.div`
     }
   } */
 
-  .CommentBlock {
+  /* .CommentBlock {
     cursor: pointer;
     position: relative;
     list-style: none;
@@ -809,7 +809,7 @@ export const SCMainPage = styled.div`
       transition: 200ms;
 
       &._active {
-        fill: var(--red);
+        fill: var(--prime-color);
         stroke: none;
       }
 
@@ -818,5 +818,5 @@ export const SCMainPage = styled.div`
         fill: var(--prime-color);
       }
     }
-  }
+  } */
 `;

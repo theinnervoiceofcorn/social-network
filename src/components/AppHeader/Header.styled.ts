@@ -63,7 +63,7 @@ export const SCHeader = styled.header`
       max-width: 360px;
 
       &::placeholder {
-        color: var(--placeholder-color);
+        color: ${(props) => props.theme.colors.placeholderColor};
       }
     }
 
@@ -73,12 +73,12 @@ export const SCHeader = styled.header`
       top: 50%;
       left: 25px;
       transform: translateY(-50%);
-      fill: var(--placeholder-color);
+      fill: ${(props) => props.theme.colors.placeholderColor};
     }
 
     &:has(input:is(:hover, :focus)) {
       .icon {
-        fill: var(--prime-color);
+        fill: ${(props) => props.theme.colors.primeColor};
       }
     }
   }
@@ -98,7 +98,7 @@ export const SCHeader = styled.header`
       cursor: pointer;
       width: 23px;
       height: 23px;
-      fill: var(--gray);
+      fill: ${(props) => props.theme.colors.gray};
 
       margin-right: calc(1.3vw + 5.8px);
       border: 1px solid transparent;
@@ -106,15 +106,15 @@ export const SCHeader = styled.header`
       transition: 200ms;
 
       &:hover {
-        fill: var(--prime-color);
-        border-color: var(--light-gray);
-        background-color: var(--bgc);
+        fill: ${(props) => props.theme.colors.primeColor};
+        border-color: ${(props) => props.theme.colors.lightGray};
+        background-color: ${(props) => props.theme.colors.bgc};
       }
 
       &:active {
         transition: 100ms;
         fill: white;
-        background-color: var(--prime-color);
+        background-color: ${(props) => props.theme.colors.primeColor};
       }
     }
 
@@ -143,7 +143,7 @@ export const SCHeader = styled.header`
       box-sizing: content-box;
 
       cursor: pointer;
-      fill: var(--gray);
+      fill: ${(props) => props.theme.colors.gray};
       width: 12px;
       transition: 200ms;
 
@@ -153,7 +153,7 @@ export const SCHeader = styled.header`
 
       &._active {
         transform: rotate(-180deg);
-        fill: var(--prime-color);
+        fill: ${(props) => props.theme.colors.primeColor};
       }
     }
   }
