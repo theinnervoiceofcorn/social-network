@@ -1,14 +1,11 @@
-import { useNavigate } from "react-router-dom";
-
 interface IAppButton {
   userIsRegistered: boolean;
+  btnType: "submit" | "reset" | "button" | undefined;
 }
 
-export const AppButton = ({ userIsRegistered }: IAppButton) => {
-  const navigate = useNavigate();
-
+export const AppButton = ({ userIsRegistered, btnType }: IAppButton) => {
   return (
-    <button onClick={() => navigate("/main")}>
+    <button type={btnType}>
       {userIsRegistered ? "Войти" : "Зарегистрироваться"}
     </button>
   );
