@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { SCHeader } from "./Header.styled";
 
-export const AppHeader = () => {
+interface IAppHeader {
+  userIsSignedIn?: boolean;
+};
+
+export const AppHeader = ({ userIsSignedIn }: IAppHeader) => {
   return (
     <SCHeader>
       <div className="Header__logo">
-        <Link to="/main">
+        <Link to={userIsSignedIn ? "/main" : ""}>
           <svg
             id="tehnikum-logo"
             viewBox="0 0 143 23"
@@ -67,7 +71,7 @@ export const AppHeader = () => {
         </svg>
         <input type="search" id="search" name="search" placeholder="Поиск" />
       </div>
-      <div className="profile-wrapper">
+      {userIsSignedIn ? <div className="profile-wrapper">
         <svg
           className="icon icon-bell"
           viewBox="0 0 23 26"
@@ -95,7 +99,7 @@ export const AppHeader = () => {
             d="M6 5.99999C5.8565 5.99999 5.71731 5.97708 5.58242 5.93128C5.44753 5.88548 5.33561 5.82441 5.24664 5.74808L0.295964 1.53435C0.0986543 1.36641 0 1.15267 0 0.893127C0 0.633586 0.0986543 0.419846 0.295964 0.251907C0.493273 0.0839689 0.744394 0 1.04933 0C1.35426 0 1.60538 0.0839689 1.80269 0.251907L6 3.82442L10.1973 0.251907C10.3946 0.0839689 10.6457 0 10.9507 0C11.2556 0 11.5067 0.0839689 11.704 0.251907C11.9013 0.419846 12 0.633586 12 0.893127C12 1.15267 11.9013 1.36641 11.704 1.53435L6.75336 5.74808C6.64574 5.83968 6.52915 5.90472 6.40359 5.94319C6.27803 5.98166 6.1435 6.0006 6 5.99999Z"
           />
         </svg>
-      </div>
+      </div> : ""}
     </SCHeader>
   );
 };

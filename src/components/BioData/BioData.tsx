@@ -1,4 +1,9 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+
 export const BioData = () => {
+  const user = useSelector((state: RootState) => state.userSlice.user);
+
   return (
     <div className="bio">
       <div className="bio__data">
@@ -33,7 +38,7 @@ export const BioData = () => {
             />
           </svg>
           <p className="main__text">
-            Город: <span>Ташкент</span>
+            Город: <span>{user?.city}</span>
           </p>
         </div>
         <div className="data__item">

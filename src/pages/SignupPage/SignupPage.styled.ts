@@ -32,11 +32,10 @@ export const SCSignupPage = styled.div`
 
   button {
     width: 100%;
-    margin-bottom: 30px;
   }
 
   @media (max-width: 530px) {
-    .LoginPage {
+    & {
       width: 100%;
     }
   }

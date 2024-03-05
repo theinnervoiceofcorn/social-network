@@ -21,7 +21,7 @@ export const SCLoginPage = styled.div`
     border: 2px solid ${(props) => props.theme.colors.disabledBgc};
     background-color: transparent;
 
-    &:last-child {
+    &:last-of-type {
       margin-bottom: 40px;
     }
 
@@ -48,7 +48,7 @@ export const SCLoginPage = styled.div`
   }
 
   @media (max-width: 530px) {
-    .LoginPage {
+    & {
       width: 100%;
     }
   }

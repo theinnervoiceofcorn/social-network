@@ -1,6 +1,10 @@
+import { RootState } from "../../store/store";
 import { AppHeading } from "../UI/AppHeading/AppHeading";
+import { useSelector } from "react-redux";
 
 export const ProfileHeader = () => {
+  const user = useSelector((state: RootState) => state.userSlice.user)
+
   return (
     <div className="ProfileHeader">
       <svg
@@ -18,7 +22,7 @@ export const ProfileHeader = () => {
       <div className="user__block">
         <img src="./img/users/denis-frolov.jpeg" alt="Denis Frolov" />
         <div className="user__description">
-          <AppHeading headingLevel="username" headingText="Денис Фролов" />
+          <AppHeading headingLevel="username" headingText={user?.name} />
           <div className="user__info">
             <div className="parameter">
               <span className="key">Друзья</span>

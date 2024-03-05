@@ -1,6 +1,6 @@
 interface IAppHeading {
   headingLevel: string;
-  headingText: string;
+  headingText: string | undefined;
 }
 
 export const AppHeading = ({ headingLevel, headingText }: IAppHeading) => {

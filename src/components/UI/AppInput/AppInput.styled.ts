@@ -2,7 +2,8 @@ import { css, styled } from "styled-components";
 
 export const ErrorMessage = styled.p`
   color: ${(props) => props.theme.colors.red};
-  margin-top: 10px;
+  /* margin-top: 5px; */
+  margin-bottom: 10px;
 `;
 
 interface IStyledInputProps {
