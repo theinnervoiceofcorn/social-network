@@ -8,6 +8,8 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { AppHeader } from "../../components/AppHeader/Header";
+import { useRegisterUserMutation } from "../../store/api/auth";
+import { useEffect } from "react";
 
 interface ISubmitProps {
   userName: string;
@@ -48,16 +50,27 @@ export const SignupPage = () => {
   });
 
   const navigate = useNavigate();
+  const [registerUser, { data }] = useRegisterUserMutation();
 
   const onSignupSubmit: SubmitHandler<ISubmitProps> = (data) => {
-    if (data) {
-      navigate("/main");
-    }
+    registerUser({
+      name: data.userName,
+      email: data.userEmail,
+      phone_number: data.userPhone,
+      password: data.userPassword,
+      user_city: data.userCity,
+    });
   };
+
+  useEffect(() => {
+    if (data) {
+      navigate("/")
+    }
+  }, [data, navigate]);
 
   return (
     <>
-      <AppHeader userIsSignedIn={false}/>
+      <AppHeader userIsSignedIn={false} />
       <SCSignupPage>
         <AppHeading headingLevel="h1" headingText="Регистрация" />
         <form onSubmit={handleSubmit(onSignupSubmit)}>

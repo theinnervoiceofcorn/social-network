@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { useGetUserByIdQuery } from "../../store/api/auth";
 
 export const BioData = () => {
-  const user = useSelector((state: RootState) => state.userSlice.user);
+  const user = localStorage.getItem("user_id");
+  const { data } = useGetUserByIdQuery(Number(user));
 
   return (
     <div className="bio">
@@ -38,7 +38,7 @@ export const BioData = () => {
             />
           </svg>
           <p className="main__text">
-            Город: <span>{user?.city}</span>
+            Город: <span>{data?.message.city}</span>
           </p>
         </div>
         <div className="data__item">

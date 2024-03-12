@@ -12,7 +12,7 @@ import { MusicBlock } from "../../components/MusicBlock/MusicBlock";
 export const MainPage = () => {
   return (
     <SCMainPage>
-      <AppHeader />
+      <AppHeader userIsSignedIn={true} />
       <aside className="LeftSide">
         <AppNavbar />
         <Sublist />

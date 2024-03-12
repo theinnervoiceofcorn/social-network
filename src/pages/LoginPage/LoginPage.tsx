@@ -7,11 +7,9 @@ import * as yup from "yup";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import { changeUser } from "../../store/slices/userSlice";
 import { useEffect } from "react";
 import { AppHeader } from "../../components/AppHeader/Header";
+import { useLoginUserMutation } from "../../store/api/auth";
 
 export const LoginPage = () => {
   interface ISubmitProps {
@@ -20,26 +18,29 @@ export const LoginPage = () => {
   }
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.userSlice.user);
+  const [loginUser, { data }] = useLoginUserMutation();
 
   const loginFormSchema = yup.object({
-    useremail: yup.string().email("Введите эл. почту в правильном формате").required("Обязательное поле!"),
+    useremail: yup
+      .string()
+      .email("Введите эл. почту в правильном формате")
+      .required("Обязательное поле!"),
     userpassword: yup
       .string()
       .min(6, "Пароль должен содержать как минимум 6 символов!")
       .required("Обязательное поле!"),
   });
 
-  const onLoginSubmit: SubmitHandler<ISubmitProps> = () => {
-    dispatch(changeUser(mockUser));
+  const onLoginSubmit: SubmitHandler<ISubmitProps> = (data) => {
+    loginUser({ email: data.useremail, password: data.userpassword });
   };
 
   useEffect(() => {
-    if (user?.user_id) {
+    if (data?.user_id) {
       navigate("/profile");
     }
-  }, [user]);
+    localStorage.setItem("user_id", `${data?.user_id}`);
+  }, [data, navigate]);
 
   const {
     control,
@@ -52,16 +53,6 @@ export const LoginPage = () => {
       userpassword: "",
     },
   });
-
-  const mockUser = {
-    mail: "nurikmirr817@gmail.com",
-    password: "20051206mir",
-    phone_number: "909352662",
-    user_id: 69,
-    name: "Nurmuhammad",
-    reg_date: new Date().toISOString,
-    city: "Tashkent",
-  };
 
   return (
     <>

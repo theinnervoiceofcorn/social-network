@@ -16,7 +16,7 @@ import { MusicBlock } from "../../components/MusicBlock/MusicBlock";
 export const ProfilePage = () => {
   return (
     <SCProfilePage>
-      <AppHeader />
+      <AppHeader userIsSignedIn={true} />
       <aside className="LeftSide">
         <AppNavbar />
         <Sublist />
